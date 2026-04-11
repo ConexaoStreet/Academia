@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidades - Pró3 Academia</title>
+  <meta name="description" content="Conheça todas as unidades da Pró3 Academia em São Paulo, com endereços e modalidades disponíveis.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+    :root {
+      --primary: #00ff9d;
+    }
+
+    * {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #020617;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.88)),
+        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgb(0 255 157 / 0.12);
+    }
+
+    .navbar-scrolled {
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+    }
+
+    .modalidade-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgb(15 23 42 / 0.06);
+      color: rgb(51 65 85);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body class="font-sans text-white">
+  <!-- NAVBAR -->
+  <nav id="navbar" class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-6 py-5 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-x-3">
+          <div class="w-10 h-10 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl leading-none pt-1">P3</div>
+          <div>
+            <h1 class="text-3xl font-bold tracking-tighter text-white section-title">Pró3</h1>
+            <p class="text-[10px] text-emerald-400 -mt-1 tracking-[2px] font-medium">ACADEMIA</p>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-x-10 text-white font-medium">
+          <a href="index.html" class="hover:text-emerald-400">Início</a>
+          <a href="#lista" class="hover:text-emerald-400">Unidades</a>
+          <a href="#contato" class="hover:text-emerald-400">Contato</a>
+        </div>
+
+        <div class="flex items-center gap-x-4">
+          <a href="https://wa.me/5511943299798" target="_blank" rel="noopener noreferrer"
+             class="flex items-center gap-x-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-3xl text-sm">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>Falar agora</span>
+          </a>
+
+          <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-3xl">
+            <i id="hamburger-icon" class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-6 py-6">
+        <div class="flex flex-col gap-y-6 text-white font-medium text-lg">
+          <a href="index.html" class="flex items-center justify-between">Início <i class="fas fa-chevron-right"></i></a>
+          <a href="#lista" onclick="toggleMobileMenu()" class="flex items-center justify-between">Unidades <i class="fas fa-chevron-right"></i></a>
+          <a href="#contato" onclick="toggleMobileMenu()" class="flex items-center justify-between">Contato <i class="fas fa-chevron-right"></i></a>
+
+          <div class="pt-6 border-t border-slate-700">
+            <a href="https://wa.me/5511943299798" target="_blank" rel="noopener noreferrer"
+               class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-4 rounded-3xl">
+              Fale no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-[60vh] flex items-center">
+    <div class="max-w-screen-2xl mx-auto px-6 py-20 w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl mb-6 text-sm font-medium">
+          <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+          NOSSAS UNIDADES
+        </div>
+
+        <h1 class="text-5xl lg:text-7xl font-bold leading-none tracking-tighter section-title mb-6">
+          TODAS AS<br>UNIDADES DA<br>PRÓ3
+        </h1>
+
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl">
+          Veja as 12 unidades da Pró3 Academia em São Paulo, com endereços e modalidades disponíveis em cada uma.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#lista"
+             class="inline-flex items-center justify-center bg-white text-slate-950 hover:bg-emerald-400 hover:text-white font-semibold text-lg px-10 py-5 rounded-3xl">
+            Ver unidades
+            <i class="fas fa-arrow-down ml-3"></i>
+          </a>
+
+          <a href="index.html"
+             class="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-slate-950 font-semibold text-lg px-10 py-5 rounded-3xl">
+            <i class="fas fa-arrow-left mr-3"></i>
+            Voltar ao início
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTA -->
+  <section id="lista" class="py-24 bg-white text-slate-950">
+    <div class="max-w-screen-2xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <span class="text-emerald-500 font-semibold text-sm tracking-widest">UNIDADES PRÓ3</span>
+          <h2 class="section-title text-5xl font-bold tracking-tighter">Conheça toda a rede</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Pq. São Jorge</h3>
+          <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Dom Andrés Lamas, 212 – Tatuapé, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">HIIT</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Pilates</span>
+            <span class="modalidade-chip">GAP</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Vanera</span>
+            <span class="modalidade-chip">Sertanejo</span>
+            <span class="modalidade-chip">Boxe</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Tatuapé</h3>
+          <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Tuiuti, 941 – Tatuapé, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Natação</span>
+            <span class="modalidade-chip">Hidroginástica</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Metrô Tatuapé</h3>
+          <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Martins Pena, 206 a 220 – Tatuapé, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Circo</span>
+            <span class="modalidade-chip">Jiu-Jitsu</span>
+            <span class="modalidade-chip">Judô</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Capoeira</span>
+            <span class="modalidade-chip">Brincadeira de Rua</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">Judô Infantil</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Natação Adulta</span>
+            <span class="modalidade-chip">Natação Infantil</span>
+            <span class="modalidade-chip">Hidroginástica</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6 ring-2 ring-emerald-400">
+          <h3 class="font-semibold text-2xl mb-2">Anália Franco</h3>
+          <p class="text-emerald-500 text-sm mb-4">Vila Gomes Cardim, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Coelho Lisboa, 663 – Vila Gomes Cardim, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Boxe</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">ABS</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Ritmos</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Sertanejo</span>
+            <span class="modalidade-chip">Step</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Jiu Jitsu Infantil</span>
+            <span class="modalidade-chip">Pilates</span>
+            <span class="modalidade-chip">Lambaerobica</span>
+            <span class="modalidade-chip">Zumba</span>
+            <span class="modalidade-chip">Natação</span>
+            <span class="modalidade-chip">Hidroginástica</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Jardim Anália Franco</h3>
+          <p class="text-emerald-500 text-sm mb-4">Jd. Anália Franco, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Dona Januária, 34 – Jd. Anália Franco, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Pilates Solo</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Terceira Idade</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Brincadeira de Rua</span>
+            <span class="modalidade-chip">Jiu Jitsu Kids</span>
+            <span class="modalidade-chip">HIIT</span>
+            <span class="modalidade-chip">Natação</span>
+            <span class="modalidade-chip">Natação Infantil</span>
+            <span class="modalidade-chip">Hidroginástica</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Vila Carrão</h3>
+          <p class="text-emerald-500 text-sm mb-4">Vila Carrão, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Azevedo Soares, 2042 – Vila Carrão, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">GAP</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Step</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+            <span class="modalidade-chip">Vanera</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Sertanejo</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Alto da Mooca</h3>
+          <p class="text-emerald-500 text-sm mb-4">Mooca, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua do Oratório, 1334 – Mooca, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">Brincadeira de Rua</span>
+            <span class="modalidade-chip">GAP</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Pilates</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Vila Prudente</h3>
+          <p class="text-emerald-500 text-sm mb-4">Vila Prudente, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">Rua Orfanato, 253 – Vila Prudente, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Step</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Glúteo</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Jiu Jitsu Infantil</span>
+            <span class="modalidade-chip">Zumba</span>
+            <span class="modalidade-chip">Vaneira</span>
+            <span class="modalidade-chip">Sertanejo</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Mooca</h3>
+          <p class="text-emerald-500 text-sm mb-4">Mooca, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-3">Av. Cassandoca, 132 – Mooca, São Paulo</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <a href="https://wa.me/5511971943618" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 1</a>
+            <a href="https://wa.me/5511972524353" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 2</a>
+            <a href="https://wa.me/5511916760638" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 3</a>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Step</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">GAP</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Jiu Jitsu Infantil</span>
+            <span class="modalidade-chip">Glúteo</span>
+            <span class="modalidade-chip">Sertanejo</span>
+            <span class="modalidade-chip">Muay Thai</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Conselheiro Carrão</h3>
+          <p class="text-emerald-500 text-sm mb-4">Vila Carrão, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-3">Av. Conselheiro Carrão, 1733 – Vila Carrão, São Paulo</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <a href="https://wa.me/5511953129875" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 1</a>
+            <a href="https://wa.me/5511996498261" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 2</a>
+            <a href="https://wa.me/5511916760638" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp 3</a>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">HIIT</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+            <span class="modalidade-chip">Glúteo</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Lambaerobica</span>
+            <span class="modalidade-chip">Vaneira</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Sertanejo</span>
+            <span class="modalidade-chip">Pilates</span>
+            <span class="modalidade-chip">Localizada</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Belenzinho</h3>
+          <p class="text-emerald-500 text-sm mb-4">Belenzinho, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-5">R. Cajuru, 913 – Belenzinho, São Paulo</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Glúteo</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Studio de Pilates</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">GAP</span>
+            <span class="modalidade-chip">Forró</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+          </div>
+        </div>
+
+        <div class="card-hover bg-slate-100 rounded-3xl p-6">
+          <h3 class="font-semibold text-2xl mb-2">Liberdade</h3>
+          <p class="text-emerald-500 text-sm mb-4">Liberdade, São Paulo</p>
+          <p class="text-slate-600 text-sm mb-3">Av. da Liberdade, 720 – Liberdade, São Paulo</p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <a href="https://wa.me/5511916760638" target="_blank" rel="noopener noreferrer" class="modalidade-chip">WhatsApp</a>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="modalidade-chip">Musculação</span>
+            <span class="modalidade-chip">Jump</span>
+            <span class="modalidade-chip">Funcional</span>
+            <span class="modalidade-chip">Pilates Studio</span>
+            <span class="modalidade-chip">Bike</span>
+            <span class="modalidade-chip">Fitdance</span>
+            <span class="modalidade-chip">Pump</span>
+            <span class="modalidade-chip">Alongamento</span>
+            <span class="modalidade-chip">Yoga</span>
+            <span class="modalidade-chip">Step</span>
+            <span class="modalidade-chip">Circuito</span>
+            <span class="modalidade-chip">Barriga Zero</span>
+            <span class="modalidade-chip">Localizada</span>
+            <span class="modalidade-chip">Jiu Jitsu</span>
+            <span class="modalidade-chip">Muay Thai</span>
+            <span class="modalidade-chip">Pilates Solo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-24 bg-slate-950 text-white">
+    <div class="max-w-screen-2xl mx-auto px-6">
+      <div class="bg-white text-slate-950 rounded-[2rem] p-8 lg:p-12">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="inline-flex bg-emerald-100 text-emerald-700 text-sm font-semibold px-5 py-2 rounded-3xl mb-6">
+              ATENDIMENTO
+            </span>
+            <h2 class="section-title text-5xl font-bold tracking-tighter mb-6">Quer ajuda para escolher?</h2>
+            <p class="text-slate-600 text-lg">
+              Chame no WhatsApp e descubra qual unidade e qual plano fazem mais sentido para você.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 lg:justify-end">
+            <a href="https://wa.me/5511943299798" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-lg px-8 py-5 rounded-3xl">
+              <i class="fab fa-whatsapp text-2xl mr-3"></i>
+              Chamar no WhatsApp
+            </a>
+
+            <a href="index.html"
+               class="inline-flex items-center justify-center border-2 border-slate-900 hover:bg-slate-900 hover:text-white font-semibold text-lg px-8 py-5 rounded-3xl">
+              Voltar ao início
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white border-t border-slate-800">
+    <div class="max-w-screen-2xl mx-auto px-6 py-14">
+      <div class="grid lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-x-3 mb-5">
+            <div class="w-10 h-10 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl leading-none pt-1">P3</div>
+            <div>
+              <h3 class="text-3xl font-bold tracking-tighter text-white section-title">Pró3</h3>
+              <p class="text-[10px] text-emerald-400 -mt-1 tracking-[2px] font-medium">ACADEMIA</p>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Rede de academias com unidades em São Paulo e atendimento para diferentes perfis.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-5">Navegação</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="index.html" class="hover:text-emerald-400">Início</a></li>
+            <li><a href="#lista" class="hover:text-emerald-400">Unidades</a></li>
+            <li><a href="#contato" class="hover:text-emerald-400">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-5">Contato</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="https://wa.me/5511943299798" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400">(11) 94329-9798</a></li>
+            <li><a href="mailto:atendimento@pro3academia.com.br" class="hover:text-emerald-400">atendimento@pro3academia.com.br</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-5">Observação</h4>
+          <p class="text-slate-400 leading-relaxed">
+            Endereços e modalidades podem mudar. Para confirmar detalhes atualizados, fale direto com a unidade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('hamburger-icon');
+      if (!menu || !icon) return;
+      menu.classList.toggle('hidden');
+
+      if (menu.classList.contains('hidden')) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (!navbar) return;
+      if (window.scrollY > 20) navbar.classList.add('navbar-scrolled');
+      else navbar.classList.remove('navbar-scrolled');
+    });
+  </script>
+</body>
+</html>

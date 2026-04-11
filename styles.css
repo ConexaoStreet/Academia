@@ -75,7 +75,6 @@ body::before {
 .brand-copy strong { font-size: 1rem; }
 .brand-copy small { color: var(--muted); }
 .menu { display: flex; align-items: center; gap: 22px; }
-.menu-inline { display: flex; }
 .menu a {
   color: var(--muted);
   text-decoration: none;
@@ -451,18 +450,4 @@ body::before {
   .metric-card { max-width: calc(100% - 40px); }
   .metric-card strong { font-size: 1.55rem; }
   .price { font-size: 2rem; }
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-  .btn:hover,
-  .card-hover:hover,
-  .modalidade-icon:hover {
-    transform: none !important;
-  }
 }
