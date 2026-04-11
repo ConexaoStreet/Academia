@@ -27,23 +27,12 @@ body {
   color: var(--text);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,.5), transparent 80%);
-}
-
 .container { width: min(var(--container), calc(100% - 32px)); margin: 0 auto; }
 .header {
   position: sticky;
   top: 0;
   z-index: 40;
-  backdrop-filter: blur(18px);
-  background: rgba(6, 13, 24, .72);
+  background: rgba(6, 13, 24, .92);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .nav {
@@ -75,6 +64,7 @@ body::before {
 .brand-copy strong { font-size: 1rem; }
 .brand-copy small { color: var(--muted); }
 .menu { display: flex; align-items: center; gap: 22px; }
+.menu-inline { display: flex; }
 .menu a {
   color: var(--muted);
   text-decoration: none;
@@ -192,7 +182,7 @@ body::before {
 .glow {
   position: absolute;
   border-radius: 999px;
-  filter: blur(18px);
+  filter: blur(12px);
 }
 .glow-a { width: 240px; height: 240px; background: rgba(124,58,237,.34); top: 36px; left: 42px; }
 .glow-b { width: 180px; height: 180px; background: rgba(56,189,248,.25); right: 52px; bottom: 78px; }
@@ -202,8 +192,7 @@ body::before {
   padding: 24px;
   border-radius: 28px;
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(8, 15, 27, .48);
-  backdrop-filter: blur(12px);
+  background: rgba(8, 15, 27, .72);
 }
 .panel-label { color: #b8c7ff; }
 .glass-panel ul { margin: 18px 0 0; padding-left: 18px; color: #d8e4f6; }
@@ -214,7 +203,6 @@ body::before {
   border-radius: 22px;
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(12px);
 }
 .metric-card span, .metric-card small { color: var(--muted); display: block; }
 .metric-card strong { font-size: 2rem; line-height: 1.1; margin: 6px 0; }
@@ -450,4 +438,17 @@ body::before {
   .metric-card { max-width: calc(100% - 40px); }
   .metric-card strong { font-size: 1.55rem; }
   .price { font-size: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .btn:hover,
+  .card-hover:hover,
+  .modalidade-icon:hover {
+    transform: none !important;
+  }
 }
