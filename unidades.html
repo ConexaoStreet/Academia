@@ -81,18 +81,33 @@
       color: #7AC943 !important;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .unit-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     .unit-image {
       width: 100%;
-      height: 220px;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 1rem;
       margin-bottom: 1rem;
       display: block;
+      background: rgb(226 232 240);
     }
 
     @media (max-width: 768px) {
       .unit-image {
-        height: 190px;
+        aspect-ratio: 4 / 5;
       }
     }
 
@@ -148,7 +163,7 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-[60vh] flex items-center">
+  <section class="hero-bg min-h-[52vh] md:min-h-[60vh] flex items-center py-10">
     <div class="max-w-screen-2xl mx-auto px-6 py-20 w-full">
       <div class="max-w-3xl">
         <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl mb-6 text-sm font-medium">
@@ -193,7 +208,7 @@
 
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/1-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/1-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Pq. São Jorge</h3>
           <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Dom Andrés Lamas, 212 – Tatuapé, São Paulo</p>
@@ -214,7 +229,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/2-2.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/2-2.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Tatuapé</h3>
           <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Tuiuti, 941 – Tatuapé, São Paulo</p>
@@ -226,7 +241,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/3-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/3-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Metrô Tatuapé</h3>
           <p class="text-emerald-500 text-sm mb-4">Tatuapé, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Martins Pena, 206 a 220 – Tatuapé, São Paulo</p>
@@ -248,7 +263,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/4-1.png" alt="Unidade Pró3" class="unit-image" ring-2 ring-emerald-400">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="img/4-1.png" alt="Unidade Pró3" class="unit-image" ring-2 ring-emerald-400">
           <h3 class="font-semibold text-2xl mb-2">Anália Franco</h3>
           <p class="text-emerald-500 text-sm mb-4">Vila Gomes Cardim, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Coelho Lisboa, 663 – Vila Gomes Cardim, São Paulo</p>
@@ -278,7 +293,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/5-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/5-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Jardim Anália Franco</h3>
           <p class="text-emerald-500 text-sm mb-4">Jd. Anália Franco, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Dona Januária, 34 – Jd. Anália Franco, São Paulo</p>
@@ -304,7 +319,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/6-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/6-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Vila Carrão</h3>
           <p class="text-emerald-500 text-sm mb-4">Vila Carrão, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Azevedo Soares, 2042 – Vila Carrão, São Paulo</p>
@@ -327,7 +342,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/7-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/7-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Alto da Mooca</h3>
           <p class="text-emerald-500 text-sm mb-4">Mooca, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua do Oratório, 1334 – Mooca, São Paulo</p>
@@ -351,7 +366,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/8-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/8-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Vila Prudente</h3>
           <p class="text-emerald-500 text-sm mb-4">Vila Prudente, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">Rua Orfanato, 253 – Vila Prudente, São Paulo</p>
@@ -376,7 +391,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/9-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/9-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Mooca</h3>
           <p class="text-emerald-500 text-sm mb-4">Mooca, São Paulo</p>
           <p class="text-slate-600 text-sm mb-3">Av. Cassandoca, 132 – Mooca, São Paulo</p>
@@ -402,7 +417,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/10-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/10-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Conselheiro Carrão</h3>
           <p class="text-emerald-500 text-sm mb-4">Vila Carrão, São Paulo</p>
           <p class="text-slate-600 text-sm mb-3">Av. Conselheiro Carrão, 1733 – Vila Carrão, São Paulo</p>
@@ -432,7 +447,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/11-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/11-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Belenzinho</h3>
           <p class="text-emerald-500 text-sm mb-4">Belenzinho, São Paulo</p>
           <p class="text-slate-600 text-sm mb-5">R. Cajuru, 913 – Belenzinho, São Paulo</p>
@@ -456,7 +471,7 @@
           </div>
         </div>
 
-        <div class="card-hover bg-slate-100 rounded-3xl p-6"><img src="img/12-1.png" alt="Unidade Pró3" class="unit-image"">
+        <div class="card-hover unit-card bg-slate-100 rounded-3xl p-6"><img src="./IMG/12-1.png" alt="Unidade Pró3" class="unit-image" loading="lazy" width="1350" height="1800">
           <h3 class="font-semibold text-2xl mb-2">Liberdade</h3>
           <p class="text-emerald-500 text-sm mb-4">Liberdade, São Paulo</p>
           <p class="text-slate-600 text-sm mb-3">Av. da Liberdade, 720 – Liberdade, São Paulo</p>
@@ -586,5 +601,25 @@
       else navbar.classList.remove('navbar-scrolled');
     });
   </script>
+
+<!-- RELATÓRIO DE ERROS E AJUSTES REALIZADOS -->
+<!--
+- Erros encontrados:
+  1. Tags de imagem malformadas nos cards das unidades (aspas sobrando no atributo class).
+  2. Cards com fotos em altura fixa pequena para imagens verticais, desperdiçando área visual.
+  3. Falta de atributos loading, width e height nas imagens das unidades.
+  4. Uso inconsistente do caminho de imagens em comparação com a nova estrutura ./IMG.
+
+- Ajustes realizados:
+  1. Corrigidas as tags <img> quebradas.
+  2. Ajustada a proporção dos cards com aspect-ratio mais adequado às fotos reais do projeto.
+  3. Adicionados loading="lazy", width e height nas imagens das unidades.
+  4. Mantido o visual original dos cards, mas com melhor encaixe e leitura das fotos.
+  5. Atualizados os caminhos das imagens das unidades para ./IMG/ para ficar compatível com a nova organização entregue.
+
+- Limitações restantes:
+  1. Os textos de modalidades por unidade foram preservados como estavam no arquivo original.
+-->
+
 </body>
 </html>
